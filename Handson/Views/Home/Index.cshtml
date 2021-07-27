@@ -1,0 +1,46 @@
+﻿@using Handson.ViewModels;
+@model ListaYoutubeViewModel
+@{
+    List<YoutubeViewModel> Videos = Model.lista;
+}
+@{
+    ViewData["Title"] = "YouTube";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11">
+            <div class="row my-5 pt-3">
+                <h1 class="ml-3 titulo-vermelho" style="font-size: 3.5rem;">YouTube</h1>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container container-categoria-produto">
+            <!-- Page Heading -->
+            <div id="divProdutos" class="row">
+                @foreach (var Video in Videos)
+                {
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class=categoria-produto card h-100 border-0">
+                            <div class="centraliza">
+                                <a href="@Video.id" target="_blank" class="text-center">
+                                    <img class="card-img-top bg-transparent border-0 img-thumbnail w-75"
+                                         src="@Video.urlthumbnails"
+                                         alt="@Video.urlthumbnails">
+                                </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="thumb-content">
+                                    <h5 class="mb-0">@Video.titulo</h5>
+                                    <small class="font-weight-light">@Video.descricao</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>    
+</div>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <meta charset="utf-8" />   
+    <title>@ViewData["Title"] - Handson</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/handson.css" />  
+</head>
+<body>   
+    <div class="content">
+        <header class="fixed-top">
+            <!--Cabecalho-->
+            <div class="bs-example fixed-top">               
+                <nav class="navbar navbar-expand-lg navbar-light shadow-sm font-weight-500 pb-0 w-100 bg-white" role="navigation">
+                    <div class="container-fluid mt-nav w-md-85">
+                        <div class="ml-5 ml-md-3 mr-4">
+                            <a class="navbar-brand pt-3 pb-3" href="/Home">
+                                <img src="~/content/images/Imagens/logo.png" height="80" class="d-inline-block align-top mt-logo" alt="">
+                            </a>
+                        </div>                       
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="pl-3 col mr-md-5p">
+                                    <form action="" id="frmBuscar" method="post">
+                                        <div class="input-group mt-search-input searchbar">
+                                            <input type="text" class="form-control mt-search-input h-100" id="busca" name="busca" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="btn-pesquisa" value="@ViewBag.busca">
+                                            <button type="submit" class="mt-search_icon"></button>
+                                        </div>
+                                    </form>
+                                </div>                                
+                            </div>                            
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+        <!--Rodape-->        
+        <div id="rodapefixo"></div>
+    </div>    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>        
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
